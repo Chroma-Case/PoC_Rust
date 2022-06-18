@@ -59,7 +59,7 @@ fn put(user: Json<User>) -> Json<Result<User, Error>> {
     Json(Ok(user.into_inner()))
 }
 
-#[delete("/<uid>", format = "json")]
+#[delete("/<uid>")]
 fn delete(uid: u64) -> Json<Option<User>> {
     if uid == 3 {
         return Json(None);
