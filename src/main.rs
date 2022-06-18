@@ -10,5 +10,5 @@ fn index() -> &'static str {
 fn rocket() -> _ {
     rocket::build()
         .mount("/", routes![index])
-        .mount("/user", routes![user::index, user::find_by_uid, user::post])
+        .attach(user::stage())
 }
